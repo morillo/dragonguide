@@ -58,7 +58,7 @@ flowchart TD
     V --> CFG[(data/official_videos.json)]:::ext
     W --> WIKI[(A Wiki of Ice and Fire /<br/>Fire & Blood — summarized + linked)]:::ext
 
-    S --> OUT[/Structured, spoiler-safe output<br/>summary · watch_for[] · book_vs_show[] · sources[]/]:::out
+    S --> OUT[/"Structured, spoiler-safe output<br/>summary · watch_for[] · book_vs_show[] · sources[]"/]:::out
     OUT --> APP
 
     GR{{guardrails.py<br/>spoiler callback +<br/>input-safety}}:::guard
