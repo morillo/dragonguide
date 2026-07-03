@@ -38,7 +38,8 @@ This file gives you (1) a section-by-section Writeup outline with word budgets t
 | MCP Server | 3 tools over stdio via `McpToolset` | `mcp_server/server.py` |
 | Security | Spoiler guardrail + secret hygiene + injection defense; 13 passing tests | `guardrails.py`, `tests/test_spoiler_guard.py`, `tests/test_pipeline.py` |
 | Deployability | Dockerfile + reproducible local run | `Dockerfile`, `README.md` |
-- State plainly: **4 of the required 3 concepts**, verifiable in the linked repo.
+| Agent skill / CLI | `python -m dragonguide --episode N` (headless run) | `src/dragonguide/__main__.py` |
+- State plainly: **5 of the required 3 concepts**, verifiable in the linked repo.
 
 ### 5. How It Works — A Walkthrough (≈350 words)
 - Trace one request for Episode 1: input validation → official-video lookup → caption fetch → lore lookup → diff → highlights → spoiler gate → rendered output with redaction banner.
