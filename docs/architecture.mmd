@@ -1,0 +1,51 @@
+flowchart TD
+    U([Viewer: "I'm on Episode N"]):::user
+
+    subgraph UI[Gradio Chat UI]
+      U --> APP[app.py]
+    end
+
+    APP --> RC
+
+    subgraph ADK[Google ADK Multi-Agent System]
+      RC[RootCoordinator<br/>LlmAgent<br/>owns spoiler boundary]:::coord
+      RC --> PIPE
+
+      subgraph PIPE[EpisodePipeline — SequentialAgent]
+        direction TB
+        T[TranscriptionAgent<br/>LlmAgent]:::agent
+        L[LoreResearchAgent<br/>LlmAgent]:::agent
+        D[AdaptationDiffAgent<br/>LlmAgent]:::agent
+        H[HighlightAgent<br/>LlmAgent]:::agent
+        S[SpoilerGuardAgent<br/>security gate]:::guard
+        T --> L --> D --> H --> S
+      end
+    end
+
+    subgraph MCP[MCP Server — mcp_server/server.py]
+      Y[[fetch_youtube_transcript]]:::tool
+      V[[search_official_hotd_videos]]:::tool
+      W[[lookup_lore]]:::tool
+    end
+
+    T -. McpToolset .-> Y
+    T -. McpToolset .-> V
+    L -. McpToolset .-> W
+
+    Y --> YT[(Official HBO YouTube<br/>captions — text only)]:::ext
+    V --> CFG[(data/official_videos.json)]:::ext
+    W --> WIKI[(A Wiki of Ice and Fire /<br/>Fire & Blood — summarized + linked)]:::ext
+
+    S --> OUT[/Structured, spoiler-safe output<br/>summary · watch_for[] · book_vs_show[] · sources[]/]:::out
+    OUT --> APP
+
+    GR{{guardrails.py<br/>spoiler callback +<br/>input-safety}}:::guard
+    GR -.enforces.- PIPE
+
+    classDef user fill:#1f2937,stroke:#9ca3af,color:#fff;
+    classDef coord fill:#7c2d12,stroke:#fb923c,color:#fff;
+    classDef agent fill:#312e81,stroke:#818cf8,color:#fff;
+    classDef guard fill:#7f1d1d,stroke:#f87171,color:#fff;
+    classDef tool fill:#064e3b,stroke:#34d399,color:#fff;
+    classDef ext fill:#1e293b,stroke:#64748b,color:#cbd5e1;
+    classDef out fill:#374151,stroke:#9ca3af,color:#fff;

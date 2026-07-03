@@ -1,0 +1,20 @@
+{
+  "_about": "Curated catalog of official promo and recap videos for HBO's House of the Dragon Season 3.",
+  "_official_channels": {
+    "house_of_the_dragon": "https://www.youtube.com/@HouseoftheDragon",
+    "max": "https://www.youtube.com/@StreamOnMax",
+    "hbo": "https://www.youtube.com/@HBO"
+  },
+  "_how_to_populate": "As episodes air, find the official promotional videos on the official YouTube channels, copy their watch URLs, paste them into the respective episode keys, set verified to true, and run in live mode.",
+  "_note": "URLs are intentionally blank at submission time; new entries are added as episodes air.",
+  "s3e1": [
+    { "type": "sneak_peek", "url": "", "title": "", "verified": false },
+    { "type": "inside_the_episode", "url": "", "title": "", "verified": false },
+    { "type": "podcast", "url": "", "title": "", "verified": false }
+  ],
+  "s3e2": [
+    { "type": "sneak_peek", "url": "", "title": "", "verified": false },
+    { "type": "inside_the_episode", "url": "", "title": "", "verified": false },
+    { "type": "podcast", "url": "", "title": "", "verified": false }
+  ]
+}

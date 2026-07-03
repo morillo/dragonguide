@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+.env.gemini
+.env.*
+*.env
+!.env.example
+
+# Temporary Capstone Kit directory
+kit_temp/
+
+# Runtime cache (regenerated)
+data/cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+*.zip
