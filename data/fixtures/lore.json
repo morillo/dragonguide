@@ -1,0 +1,30 @@
+{
+  "rhaenyra": {
+    "summary": "In Fire & Blood, Rhaenyra Targaryen is the self-proclaimed Queen of the Seven Kingdoms, leading the Blacks. During the early phases of the Dance of the Dragons, she remains at Dragonstone mourning the death of her son Lucerys Velaryon, while her council helps plan their military strategy against her half-brother Aegon II.",
+    "source": "https://awoiaf.westeros.org/index.php/Rhaenyra_Targaryen"
+  },
+  "alicent": {
+    "summary": "In the books, Dowager Queen Alicent Hightower is a primary instigator of the Greens, crowning Aegon II. Unlike the show, she remains politically active in the Green Council throughout the war, advocating for Aegon's reign and orchestrating marriages and alliances, though her influence wanes as Aemond Targaryen assumes the regency.",
+    "source": "https://awoiaf.westeros.org/index.php/Alicent_Hightower"
+  },
+  "harrenhal": {
+    "summary": "Daemon Targaryen takes Harrenhal without a fight from Ser Simon Strong early in the war. The castle becomes a major staging point for the Blacks in the Riverlands. Daemon uses it to gather local lords (like the Brackens and Blackwoods), but the massive, cursed fortress is also famous for causing hallucinations and nightmares.",
+    "source": "https://awoiaf.westeros.org/index.php/Taking_of_Harrenhal"
+  },
+  "gullet": {
+    "summary": "The Battle of the Gullet is one of the bloodiest sea battles in Westerosi history. It occurs when the Triarchy fleet, hired by the Greens, launches a surprise attack to break the Velaryon blockade. Prince Jacaerys Velaryon flies Vermax into battle but is shot down and killed. The Velaryon fleet suffers heavy losses, and Driftmark is sacked.",
+    "source": "https://awoiaf.westeros.org/index.php/Battle_of_the_Gullet"
+  },
+  "cole": {
+    "summary": "Ser Criston Cole, Lord Commander of the Kingsguard, is appointed Hand of the King by Aegon II. Cole advocates for an aggressive offensive against the Blacks. He personally leads the Green host on a campaign in the Riverlands and Crownlands, successfully taking Duskendale and laying siege to Rook's Rest.",
+    "source": "https://awoiaf.westeros.org/index.php/Criston_Cole"
+  },
+  "burning mill": {
+    "summary": "The Battle of the Burning Mill is a minor yet bloody skirmish fought early in the Dance of the Dragons in the Riverlands. It erupts from a border dispute between House Blackwood (loyal to Rhaenyra) and House Bracken (loyal to Aegon II). Both sides suffer heavy casualties, but the Blackwoods emerge victorious, eventually taking Stone Hedge.",
+    "source": "https://awoiaf.westeros.org/index.php/Battle_of_the_Burning_Mill"
+  },
+  "rooks rest": {
+    "summary": "The Battle of Rook's Rest is the first major dragon-on-dragon conflict of the war. Enroute to Rook's Rest, Ser Criston Cole's Green army is ambushed by Princess Rhaenys Targaryen on her dragon Meleys. However, Aegon II on Sunfyre and Aemond on Vhagar lie in wait. Meleys is killed along with Rhaenys, Aegon II is severely burned, and Sunfyre is crippled.",
+    "source": "https://awoiaf.westeros.org/index.php/Battle_of_Rook%27s_Rest"
+  }
+}
