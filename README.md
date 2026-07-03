@@ -21,7 +21,7 @@ DragonGuide is a **Google ADK multi-agent system** that ingests **official HBO Y
 
 ```mermaid
 flowchart TD
-    U([Viewer: "I'm on Episode N"]):::user
+    U(["Viewer: I'm on Episode N"]):::user
 
     subgraph UI[Gradio Chat UI]
       U --> APP[app.py]
