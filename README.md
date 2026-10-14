@@ -108,21 +108,20 @@ See **[ARCHITECTURE.md](./ARCHITECTURE.md)** for the full diagram and data flow.
 > Runs **fully offline** against cached fixtures by default, so it works with no API keys for evaluation. Add keys to enable live fetching.
 
 ### 1. Prerequisites
-- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) — installs the pinned Python (see `.python-version`) and all dependencies
 - (Optional) A Gemini API key for live model calls; (optional) a YouTube Data API key for live transcript fetch.
 
 ### 2. Setup
 ```bash
 git clone https://github.com/<your-username>/dragonguide.git
 cd dragonguide
-python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"      # or: uv pip install -e ".[dev]"
+uv sync --extra dev         # creates .venv with the pinned Python + locked deps
 cp .env.example .env        # then fill in keys if you want live mode (optional)
 ```
 
 ### 3. Run the MCP server (separate terminal — optional; the app launches it automatically)
 ```bash
-python mcp_server/server.py
+uv run python mcp_server/server.py
 ```
 
 ### 4. Launch the app
@@ -130,23 +129,23 @@ python mcp_server/server.py
 > The test suite, CLI, and interactive Gradio UI all run fully offline against cached fixtures by default (no keys needed). Without API keys, the app runs a deterministic offline pipeline against fixtures to return rich structured guides. Adding a `GEMINI_API_KEY` to `.env` is optional and enables live model reasoning.
 
 ```bash
-python app.py
+uv run python app.py
 # open the printed local URL, pick your episode, and ask away
 ```
 
 ### 5. Run the tests (proves the spoiler guardrail + offline pipeline)
 ```bash
-pytest -v
+uv run pytest -v
 ```
 
 ### 6. Run the CLI tool
 You can run the multi-agent companion directly from your terminal:
 ```bash
-python -m dragonguide --episode 1 --message "What details should I pay attention to?"
+uv run python -m dragonguide --episode 1 --message "What details should I pay attention to?"
 ```
-Or, if you installed the package in editable mode:
+Or via the console script:
 ```bash
-dragonguide --episode 1
+uv run dragonguide --episode 1
 ```
 Unaired selection fallback is fully supported (selections beyond aired episodes will fallback to Episode 2 and display a warning).
 
