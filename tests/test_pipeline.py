@@ -175,6 +175,7 @@ def test_spoiler_guard_agent_runner():
         final_session = await runner.session_service.get_session(
             app_name="test_app", user_id="test_user", session_id=session.id
         )
+        assert final_session is not None
         final_guide_dict = final_session.state.get("final_guide")
         assert final_guide_dict is not None
         assert final_guide_dict["redacted_count"] == 2

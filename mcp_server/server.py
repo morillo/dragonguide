@@ -168,7 +168,9 @@ def fetch_youtube_transcript(video_url_or_id: str) -> dict:
     # Live fetch attempt using youtube-transcript-api
     try:
         from youtube_transcript_api import YouTubeTranscriptApi
-        segments = YouTubeTranscriptApi.get_transcript(vid)
+        # youtube-transcript-api >= 1.0: instance API; to_raw_data() keeps the
+        # list-of-dicts shape ({"text", "start", "duration"}) used below.
+        segments = YouTubeTranscriptApi().fetch(vid).to_raw_data()
         
         formatted_segments = []
         for s in segments:

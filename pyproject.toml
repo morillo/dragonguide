@@ -15,7 +15,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0.0"]
+dev = [
+    "pyright>=1.1.414",
+    "pytest>=8.0.0",
+]
 
 [project.scripts]
 dragonguide = "dragonguide.__main__:main"

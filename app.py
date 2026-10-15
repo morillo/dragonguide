@@ -43,9 +43,10 @@ async def _run(current_episode: int, user_msg: str) -> EpisodeGuide:
         user_id="viewer", session_id=session.id, new_message=content
     ):
         pass  # drive the pipeline to completion
-    final = (await runner.session_service.get_session(
+    final_session = await runner.session_service.get_session(
         app_name="dragonguide", user_id="viewer", session_id=session.id
-    )).state.get("final_guide", {})
+    )
+    final = final_session.state.get("final_guide", {}) if final_session else {}
     return EpisodeGuide(**final) if final else EpisodeGuide(episode=int(current_episode))
 
 
