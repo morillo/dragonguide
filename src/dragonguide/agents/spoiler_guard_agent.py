@@ -29,7 +29,7 @@ class SpoilerGuardAgent(BaseAgent):
         current_episode = int(state.get("current_episode", 1))
 
         draft = state.get("draft_guide")
-        guide = draft if isinstance(draft, EpisodeGuide) else EpisodeGuide(**draft)
+        guide = draft if isinstance(draft, EpisodeGuide) else EpisodeGuide.model_validate(draft)
 
         # The single source of truth for the spoiler rule lives in guardrails.py.
         safe = enforce_spoiler_boundary(guide, current_episode)

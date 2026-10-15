@@ -30,9 +30,10 @@ async def run_pipeline(episode: int, message: str) -> EpisodeGuide:
         user_id="cli_user", session_id=session.id, new_message=content
     ):
         pass
-    final = (await runner.session_service.get_session(
+    final_session = await runner.session_service.get_session(
         app_name="dragonguide", user_id="cli_user", session_id=session.id
-    )).state.get("final_guide", {})
+    )
+    final = final_session.state.get("final_guide", {}) if final_session else {}
     return EpisodeGuide(**final) if final else EpisodeGuide(episode=episode)
 
 
