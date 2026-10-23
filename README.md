@@ -115,7 +115,7 @@ See **[ARCHITECTURE.md](./ARCHITECTURE.md)** for the full diagram and data flow.
 ```bash
 git clone https://github.com/<your-username>/dragonguide.git
 cd dragonguide
-uv sync --extra dev         # creates .venv with the pinned Python + locked deps
+uv sync                     # creates .venv with the pinned Python + locked deps (incl. dev tools)
 cp .env.example .env        # then fill in keys if you want live mode (optional)
 ```
 
